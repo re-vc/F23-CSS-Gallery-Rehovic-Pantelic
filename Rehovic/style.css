@@ -1,15 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700&display=swap");
 * {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
 
-.wrapper {
+body {
+  background-color: #02040F;
+}
+
+nav {
+  height: 3rem;
+  background-color: #002642;
+  margin-bottom: 0.2em;
+}
+nav ul {
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li .borger {
+  display: none;
+}
+nav ul li a {
+  padding: 0.9rem 4rem;
+  line-height: 3rem;
+  text-decoration: none;
+  background-color: #002642;
+  color: #E5DADA;
+}
+nav ul li a:hover {
+  background-color: #E5DADA;
+  color: #02040F;
+}
+
+.container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.1em 0.3em;
+  gap: 0.2em 0.2em;
 }
-.wrapper .item {
-  background-color: #eee;
+.container .item {
+  background-color: #E5DADA;
+}
+.container .item img {
+  width: 100%;
+  height: auto;
+}
+.container .item img:hover {
+  opacity: 90%;
+}
+
+@media screen and (max-width: 1024px) {
+  nav ul li .borger {
+    display: inline;
+  }
+  nav ul li a {
+    display: none;
+  }
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 512px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
 }/*# sourceMappingURL=style.css.map */

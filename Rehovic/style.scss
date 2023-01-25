@@ -1,12 +1,85 @@
 @import "./reset";
+$primary: #02040F;
+$secondary: #E5DADA;
+$alert: #E59500;
+$error: #840032;
+$chill: #002642;
 
-.wrapper {
+body {
+    background-color: $primary;
+}
+
+
+nav {    
+    height: 3rem;
+    background-color: $chill;
+    margin-bottom: .2em;
+
+    ul {
+        text-align: center;
+
+        li {          
+            display: inline-block;
+
+            .borger {
+                display: none;
+            }
+
+            a {
+                padding: 0.9rem 4rem;
+                line-height: 3rem;
+                text-decoration: none;
+                background-color: $chill;
+                color: $secondary;
+                &:hover {
+                    background-color: $secondary;
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+.container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: .1em .3em;
+    gap: 0.2em 0.2em;
 
     .item {
-        background-color: #eee;
-        // border: 1px solid #fff;
+        background-color: $secondary;
+
+        img {
+            width: 100%;
+            height: auto;
+
+            &:hover {
+                opacity: 90%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    nav {
+        ul {
+            li {
+                .borger {
+                    display: inline;
+                    
+                }
+                a {
+                    display: none;
+                }
+            }
+        }
+    }
+    .container {
+        grid-template-columns: repeat(2, 1fr);   
+    }
+}
+
+@media screen and (max-width: 512px) {
+    .container {
+        grid-template-columns: 1fr;                
     }
 }
