@@ -1,0 +1,12 @@
+@import "./reset";
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .1em .3em;
+
+    .item {
+        background-color: #eee;
+        // border: 1px solid #fff;
+    }
+}
